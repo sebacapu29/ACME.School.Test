@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.School.Domain", "ACME.School.Domain\ACME.School.Domain.csproj", "{06F0150B-C2E0-428E-A00D-2EE5352EB907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.School.Domain", "ACME.School.Domain\ACME.School.Domain.csproj", "{06F0150B-C2E0-428E-A00D-2EE5352EB907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.School.Application", "ACME.School.Application\ACME.School.Application.csproj", "{9E38DB85-AEC8-4D08-90E0-0B3C7E538FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.School.Application", "ACME.School.Application\ACME.School.Application.csproj", "{9E38DB85-AEC8-4D08-90E0-0B3C7E538FD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.School.Infrastructure", "ACME.School.Infrastructure\ACME.School.Infrastructure.csproj", "{8D4F416A-FF8B-43D4-B830-9BA1F864F3FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.School.Infrastructure", "ACME.School.Infrastructure\ACME.School.Infrastructure.csproj", "{8D4F416A-FF8B-43D4-B830-9BA1F864F3FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.School.Tests", "ACME.School.Tests\ACME.School.Tests.csproj", "{21203900-57EF-447C-9C55-A8FAFA0C3C3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.School.Tests", "ACME.School.Tests\ACME.School.Tests.csproj", "{21203900-57EF-447C-9C55-A8FAFA0C3C3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.School.API", "ACME.School.API\ACME.School.API.csproj", "{60A02510-12CD-4332-A97A-3277904FCB6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{21203900-57EF-447C-9C55-A8FAFA0C3C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21203900-57EF-447C-9C55-A8FAFA0C3C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21203900-57EF-447C-9C55-A8FAFA0C3C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A02510-12CD-4332-A97A-3277904FCB6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A02510-12CD-4332-A97A-3277904FCB6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A02510-12CD-4332-A97A-3277904FCB6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A02510-12CD-4332-A97A-3277904FCB6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
