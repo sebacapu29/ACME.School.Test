@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ACME.School.Domain\ACME.School.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

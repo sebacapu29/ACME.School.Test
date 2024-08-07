@@ -3,24 +3,24 @@ using ACME.School.Domain.Repositories;
 
 namespace ACME.School.Infrastructure.Repositories
 {
-    public class StudentRepository : IStudentRepository
+    public class CourseRepository : ICourseRepository
     {
-        public void AddStudent(Student student)
+        public void AddCourse(Course course)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetAllStudents()
+        public IEnumerable<Course> GetAllCourses()
         {
             throw new NotImplementedException();
         }
 
-        public Student GetStudentById(int id)
+        public Course GetCourseById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateStudent(Student student)
+        public void UpdateCourse(Course course)
         {
             throw new NotImplementedException();
         }

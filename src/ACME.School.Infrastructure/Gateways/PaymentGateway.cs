@@ -1,6 +1,12 @@
-﻿namespace ACME.School.Infrastructure.Gateways
+﻿using ACME.School.Domain.Services;
+
+namespace ACME.School.Infrastructure.Gateways
 {
-    public class PaymentGateway
+    public class PaymentGateway : IPaymentGateway
     {
+        public bool ProcessPayment(decimal amount)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
