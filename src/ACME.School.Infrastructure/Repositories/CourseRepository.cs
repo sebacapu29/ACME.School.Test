@@ -5,24 +5,37 @@ namespace ACME.School.Infrastructure.Repositories
 {
     public class CourseRepository : ICourseRepository
     {
+        private readonly SchoolContext _context;
+        public CourseRepository(SchoolContext context)
+        {
+            _context = context;
+        }
         public void AddCourse(Course course)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Course> GetAllCourses()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Course GetCourseById(int id)
-        {
-            throw new NotImplementedException();
+            _context.Courses.Add(course);
+            _context.SaveChanges();
         }
 
         public void UpdateCourse(Course course)
         {
-            throw new NotImplementedException();
+            _context.Courses.Update(course);
+            _context.SaveChanges();
+        }
+
+        public void DeleteCourse(Course course)
+        {
+            _context.Courses.Remove(course);
+            _context.SaveChanges();
+        }
+
+        public Course? GetCourseById(int id)
+        {
+            return _context.Courses.Find(id);
+        }
+
+        public IEnumerable<Course> GetAllCourses()
+        {
+            return _context.Courses.AsEnumerable();
         }
     }
 }

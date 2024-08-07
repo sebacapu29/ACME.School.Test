@@ -21,7 +21,7 @@ namespace ACME.School.Application.Services
             _studentRepository.AddStudent(student);
         }
 
-        public Student GetStudentById(int id)
+        public Student? GetStudentById(int id)
         {
             return _studentRepository.GetStudentById(id);
         }
