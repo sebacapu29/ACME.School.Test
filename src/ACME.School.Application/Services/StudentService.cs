@@ -7,14 +7,10 @@ namespace ACME.School.Application.Services
     public class StudentService : IStudentService
     {
         private readonly IStudentRepository _studentRepository;
-        private readonly ICourseRepository _courseRepository;
-        private readonly IPaymentGateway _paymentGateway;
 
-        public StudentService(IStudentRepository studentRepository, ICourseRepository courseRepository, IPaymentGateway paymentGateway)
+        public StudentService(IStudentRepository studentRepository)
         {
             _studentRepository = studentRepository;
-            _courseRepository = courseRepository;
-            _paymentGateway = paymentGateway;
         }
         public void RegisterStudent(Student student)
         {
