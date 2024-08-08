@@ -35,14 +35,14 @@ namespace ACME.School.Application.Services.Impl
             if (!courseFiltered!.ToList().Any())
                 throw new ArgumentException("course not found");
 
-            return courseFiltered.Select(c => new CourseResponse { Id = c.GetId(), EndDate = c.EndDate, StartDate = c.StartDate, Name = c.Name, RegistrationFee = c.RegistrationFee });
+            return courseFiltered.Select(c => new CourseResponse { Id = c.Id, EndDate = c.EndDate, StartDate = c.StartDate, Name = c.Name, RegistrationFee = c.RegistrationFee });
         }
         private int GetRandomId() => new Random().Next(0, 99999999);
 
         public IEnumerable<CourseResponse> GetAllCourses()
         {
             var courseFiltered =  _courseRepository.GetAllCourses();
-            return courseFiltered.Select(c => new CourseResponse { Id = c.GetId(), EndDate = c.EndDate, StartDate = c.StartDate, Name = c.Name, RegistrationFee = c.RegistrationFee });
+            return courseFiltered.Select(c => new CourseResponse { Id = c.Id, EndDate = c.EndDate, StartDate = c.StartDate, Name = c.Name, RegistrationFee = c.RegistrationFee });
         }
     }
 }

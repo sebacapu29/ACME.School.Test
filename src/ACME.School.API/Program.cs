@@ -37,7 +37,7 @@ app.Run();
 static void ConfigureServices(IHostApplicationBuilder builder)
 {
     builder.Services.AddDbContext<SchoolContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        options.UseInMemoryDatabase("SchoolDatabase"));
 
     builder.Services.AddScoped<IStudentRepository, StudentRepository>();
     builder.Services.AddScoped<ICourseRepository, CourseRepository>();

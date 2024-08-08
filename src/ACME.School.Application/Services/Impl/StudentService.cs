@@ -32,7 +32,7 @@ namespace ACME.School.Application.Services.Impl
                 var student = _studentRepository.GetStudentById(id);
                 return new StudentResponse
                 {
-                    Id = student!.GetId(),
+                    Id = student!.Id,
                     Name = student.Name,
                     DateOfBirth = student.BirthDate
                 };
@@ -43,9 +43,8 @@ namespace ACME.School.Application.Services.Impl
 
         public IEnumerable<StudentResponse> GetAllStudents()
         {
-            var randomId = GetRandomId();
             var students = _studentRepository.GetAllStudents();
-            return students.Select(s => new StudentResponse { Id = randomId, DateOfBirth = s.BirthDate, Name = s.Name });
+            return students.Select(s => new StudentResponse { Id = s.Id, DateOfBirth = s.BirthDate, Name = s.Name });
         }
         private int GetRandomId ()=> new Random().Next(0, 99999999);
     }

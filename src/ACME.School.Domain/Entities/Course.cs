@@ -2,7 +2,7 @@
 {
     public class Course
     {
-        private int Id { get; set; }
+        public int Id { get; private set; }
         public string Name { get; private set; }
         public decimal RegistrationFee { get; private set; }
         public DateTime StartDate { get; private set; }
@@ -10,7 +10,7 @@
         private List<Student> _students = [];
 
         public IEnumerable<Student> Students => _students.AsEnumerable();
-
+        private Course() { }
         public Course(int id, string name, decimal registrationFee, DateTime startDate, DateTime endDate)
         {
             Id = id;
@@ -23,7 +23,6 @@
         public void AddStudent(Student student)
         {
             _students.Add(student);
-        }
-        public int GetId() => Id;   
+        } 
     }
 }

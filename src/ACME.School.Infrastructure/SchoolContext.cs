@@ -12,6 +12,11 @@ namespace ACME.School.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Course>()
+              .HasKey(c => c.Id);
+
+                    modelBuilder.Entity<Student>()
+                        .HasKey(s => s.Id);
             base.OnModelCreating(modelBuilder);
         }
     }
