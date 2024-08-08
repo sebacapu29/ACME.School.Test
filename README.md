@@ -23,3 +23,9 @@ Este es un proyecto realizado con tecnologías .Net, con la finalidad de registr
 - Se tomo al rededor de 20 horas en realizar el proyecto completo
 
 ## Cosas Investigadas
+Se reforzó en los siguientes puntos:
+- Clean Architecture
+- Framework xUnit
+- Entity Framework Core
+- Moq
+- Configuration Service
