@@ -1,4 +1,4 @@
-﻿namespace ACME.School.Domain.Services
+﻿namespace ACME.School.Application.Services.Interfaces
 {
     public interface IPaymentGateway
     {

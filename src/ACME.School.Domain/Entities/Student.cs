@@ -2,7 +2,7 @@
 {
     public class Student
     {
-        public int Id { get; private set; }
+        private int Id { get; set; }
         public string Name { get; private set; }
         public DateTime BirthDate { get; private set; }
         private List<Course> _registeredCourses = [];
@@ -15,6 +15,7 @@
             Name = name;
             BirthDate = birthDate;
         }
+        public int GetId() => Id;
         public void RegisterForCourse(Course course)
         {
             _registeredCourses.Add(course);

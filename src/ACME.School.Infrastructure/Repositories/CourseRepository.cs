@@ -30,7 +30,10 @@ namespace ACME.School.Infrastructure.Repositories
 
         public Course? GetCourseById(int id)
         {
-            return _context.Courses.Find(id);
+            if (id > 0)
+                return _context.Courses.Find(id);
+            else
+                throw new ArgumentException("course Id cannot be negative");
         }
 
         public IEnumerable<Course> GetAllCourses()

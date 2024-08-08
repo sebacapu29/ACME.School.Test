@@ -1,4 +1,4 @@
-﻿using ACME.School.Domain.Services;
+﻿using ACME.School.Application.Services.Interfaces;
 
 namespace ACME.School.Infrastructure.Gateways
 {

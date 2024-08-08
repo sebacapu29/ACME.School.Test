@@ -1,9 +1,9 @@
-﻿using ACME.School.Domain.Entities;
+﻿using ACME.School.Application.DTOs.Requests;
 using FluentValidation;
 
 namespace ACME.School.Application.Validators
 {
-    public class CourseValidator : AbstractValidator<Course>
+    public class CourseValidator : AbstractValidator<CourseRequest>
     {
         public CourseValidator()
         {

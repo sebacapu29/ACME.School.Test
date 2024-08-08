@@ -1,7 +1,8 @@
-﻿using ACME.School.Domain.Repositories;
-using ACME.School.Domain.Services;
+﻿using ACME.School.Application.DTOs.Requests;
+using ACME.School.Application.Services.Interfaces;
+using ACME.School.Domain.Repositories;
 
-namespace ACME.School.Application.Services
+namespace ACME.School.Application.Services.Impl
 {
     public class RegistrationService : IRegistrationService
     {
@@ -16,14 +17,14 @@ namespace ACME.School.Application.Services
             _paymentGateway = paymentGateway;
         }
 
-        public bool RegisterStudentInCourse(int studentId, int courseId)
+        public bool RegisterStudentInCourse(RegistrationRequest registrationRequest)
         {
-            var student = _studentRepository.GetStudentById(studentId);
-            if (student == null) 
+            var student = _studentRepository.GetStudentById(registrationRequest.StudentId);
+            if (student == null)
                 throw new ArgumentException("Student not found");
 
-            var course = _courseRepository.GetCourseById(courseId);
-            if (course == null) 
+            var course = _courseRepository.GetCourseById(registrationRequest.CourseId);
+            if (course == null)
                 throw new ArgumentException("Course not found");
 
             if (course.RegistrationFee > 0)

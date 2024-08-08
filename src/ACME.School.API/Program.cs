@@ -1,15 +1,25 @@
+using ACME.School.Application.Services.Impl;
+using ACME.School.Application.Services.Interfaces;
+using ACME.School.Application.Validators;
+using ACME.School.Domain.Repositories;
+using ACME.School.Infrastructure;
+using ACME.School.Infrastructure.Gateways;
+using ACME.School.Infrastructure.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+ConfigureServices(builder);
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -23,3 +33,22 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+static void ConfigureServices(IHostApplicationBuilder builder)
+{
+    builder.Services.AddDbContext<SchoolContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+    builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+    builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+    builder.Services.AddScoped<IStudentService, StudentService>();
+    builder.Services.AddScoped<ICourseService, CourseService>();
+    builder.Services.AddScoped<IPaymentGateway, PaymentGateway>();
+    builder.Services.AddScoped<IRegistrationService, RegistrationService>();
+
+    builder.Services.AddValidatorsFromAssemblyContaining<StudentValidator>();
+    builder.Services.AddValidatorsFromAssemblyContaining<CourseValidator>();
+    builder.Services.AddFluentValidationAutoValidation();
+    builder.Services.AddFluentValidationClientsideAdapters();
+}
+

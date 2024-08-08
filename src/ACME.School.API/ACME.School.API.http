@@ -1,6 +1,5 @@
 @ACME.School.API_HostAddress = http://localhost:5264
 
-GET {{ACME.School.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

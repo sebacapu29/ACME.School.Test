@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ACME.School.Application\ACME.School.Application.csproj" />
+    <ProjectReference Include="..\ACME.School.Domain\ACME.School.Domain.csproj" />
+    <ProjectReference Include="..\ACME.School.Infrastructure\ACME.School.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

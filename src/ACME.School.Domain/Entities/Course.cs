@@ -2,7 +2,7 @@
 {
     public class Course
     {
-        public int Id { get; private set; }
+        private int Id { get; set; }
         public string Name { get; private set; }
         public decimal RegistrationFee { get; private set; }
         public DateTime StartDate { get; private set; }
@@ -24,5 +24,6 @@
         {
             _students.Add(student);
         }
+        public int GetId() => Id;   
     }
 }
